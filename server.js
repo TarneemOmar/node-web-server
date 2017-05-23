@@ -4,6 +4,8 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+
+const port = process.env.PORT || 3000; // this is for heroku or use port 3000 as defult
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -71,5 +73,5 @@ erorrMessage: 'Unable to handle request'
 });
 });
 app.listen(3000, () => {
-	console.log('server is up on 3000');
+	console.log('server is up on ' + port);
 }); //port to develop locally for local server
